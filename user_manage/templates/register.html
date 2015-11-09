@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>网络加速 - 注册</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="row">		
+        <div class="content col-lg-9">
+
+            <h2>注册</h2>
+            <p>请填写账号信息</p><div class="titleline"><span class="line1"></span><span class="line2"></span></div>
+
+
+            <form method="post" action="/user/subregister/">{% csrf_token %}
+                <input type="hidden" name="token" value="430e1d780b96e61fea9545efe9051bbdb1ba4442">
+                <input type="hidden" name="register" value="true">
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-lg-6">
+
+                            <div class="form-group">
+                                <label class="control-label" for="lastname">姓名</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" name="name" id="name" value="">
+                                </div>
+                            </div>
+
+                            <div style="form-group">
+                                <label class="control-label" for="companyname">QQ(方便我们的客服及时与您沟通...)</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" name="qq" id="qq" value="" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="email">电子邮件地址</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" name="email" id="email" value="" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="password">密码</label>
+                                <div class="controls">
+                                    <input type="password" class="form-control" name="password" id="password" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="password2">确认密码</label>
+                                <div class="controls">
+                                    <input type="password" class="form-control" name="password2" id="password2" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="passstrength">密码强度（请尽量使用复杂密码以提高安全性）</label>
+                                <div class="controls">
+
+                                    <script>
+jQuery(document).ready(function(){
+            jQuery("#password").keyup(function () {
+                var pw = jQuery("#password").val();
+                var pwlength=(pw.length);
+                if(pwlength>5)pwlength=5;
+                var numnumeric=pw.replace(/[0-9]/g,"");
+                var numeric=(pw.length-numnumeric.length);
+                if(numeric>3)numeric=3;
+                var symbols=pw.replace(/\W/g,"");
+                var numsymbols=(pw.length-symbols.length);
+                if(numsymbols>3)numsymbols=3;
+                var numupper=pw.replace(/[A-Z]/g,"");
+                var upper=(pw.length-numupper.length);
+                if(upper>3)upper=3;
+                var pwstrength=((pwlength*10)-20)+(numeric*10)+(numsymbols*15)+(upper*10);
+                if(pwstrength<0){pwstrength=0}
+                if(pwstrength>100){pwstrength=100}
+                jQuery("#pwstrengthbox").removeClass("weak moderate strong");
+                jQuery("#pwstrengthbox").html("安全（请您妥善保管您的密码）");
+                jQuery("#pwstrengthbox").addClass("strong");
+                if (pwstrength<75) {
+                jQuery("#pwstrengthbox").html("一般（请尽量使用复杂密码以提高安全性）");
+                jQuery("#pwstrengthbox").addClass("moderate");
+                }
+                if (pwstrength<30) {
+                    jQuery("#pwstrengthbox").html("弱（请尽量使用复杂密码以提高安全性）");
+                    jQuery("#pwstrengthbox").addClass("weak");
+                }
+            });
+});
+                                    </script>
+
+                                    <div id="pwstrengthbox">密码强度（请尽量使用复杂密码以提高安全性）</div>		</div>
+                            </div>
+                                </div>
+                            </div>
+
+                </div>
+
+                <input class="btn btn-primary" type="submit" value="注册">
+            </form>
+
+
+
+
+        </div><!--/.content-->
+
+    </div>
+</div>
+</body></html>

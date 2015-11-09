@@ -1,0 +1,740 @@
+20151109 21:36:02 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:02 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:02 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:02 [schema.py:102] [DEBUG] CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); (params None)
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.640) CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_migrations'; args=[u'django_migrations']
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 21:36:03 [schema.py:102] [DEBUG] CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); (params None)
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.386) CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); args=None
+20151109 21:36:03 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'django_content_type'; args=[u'django_content_type']
+20151109 21:36:03 [schema.py:102] [DEBUG] ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_45f3b1d93ec8c61c_uniq` UNIQUE (`app_label`, `model`); (params [])
+20151109 21:36:04 [utils.py:89] [DEBUG] (0.342) ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_45f3b1d93ec8c61c_uniq` UNIQUE (`app_label`, `model`); args=[]
+20151109 21:36:04 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:04 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0001_initial', '2015-11-09 13:36:04.280296'); args=['contenttypes', u'0001_initial', u'2015-11-09 13:36:04.280296']
+20151109 21:36:04 [schema.py:102] [DEBUG] CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL, UNIQUE (`content_type_id`, `codename`)); (params None)
+20151109 21:36:04 [utils.py:89] [DEBUG] (0.396) CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL, UNIQUE (`content_type_id`, `codename`)); args=None
+20151109 21:36:04 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_permission'; args=[u'auth_permission']
+20151109 21:36:04 [schema.py:102] [DEBUG] CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); (params None)
+20151109 21:36:05 [utils.py:89] [DEBUG] (0.416) CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); args=None
+20151109 21:36:05 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group'; args=[u'auth_group']
+20151109 21:36:05 [schema.py:102] [DEBUG] CREATE TABLE `auth_group_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`group_id`, `permission_id`)); (params None)
+20151109 21:36:05 [utils.py:89] [DEBUG] (0.398) CREATE TABLE `auth_group_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`group_id`, `permission_id`)); args=None
+20151109 21:36:05 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group_permissions'; args=[u'auth_group_permissions']
+20151109 21:36:05 [schema.py:102] [DEBUG] CREATE TABLE `auth_user` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NOT NULL, `is_superuser` bool NOT NULL, `username` varchar(30) NOT NULL UNIQUE, `first_name` varchar(30) NOT NULL, `last_name` varchar(30) NOT NULL, `email` varchar(75) NOT NULL, `is_staff` bool NOT NULL, `is_active` bool NOT NULL, `date_joined` datetime(6) NOT NULL); (params None)
+20151109 21:36:05 [utils.py:89] [DEBUG] (0.412) CREATE TABLE `auth_user` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NOT NULL, `is_superuser` bool NOT NULL, `username` varchar(30) NOT NULL UNIQUE, `first_name` varchar(30) NOT NULL, `last_name` varchar(30) NOT NULL, `email` varchar(75) NOT NULL, `is_staff` bool NOT NULL, `is_active` bool NOT NULL, `date_joined` datetime(6) NOT NULL); args=None
+20151109 21:36:05 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=[u'auth_user']
+20151109 21:36:05 [schema.py:102] [DEBUG] CREATE TABLE `auth_user_groups` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `group_id` integer NOT NULL, UNIQUE (`user_id`, `group_id`)); (params None)
+20151109 21:36:06 [utils.py:89] [DEBUG] (0.387) CREATE TABLE `auth_user_groups` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `group_id` integer NOT NULL, UNIQUE (`user_id`, `group_id`)); args=None
+20151109 21:36:06 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_groups'; args=[u'auth_user_groups']
+20151109 21:36:06 [schema.py:102] [DEBUG] CREATE TABLE `auth_user_user_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`user_id`, `permission_id`)); (params None)
+20151109 21:36:06 [utils.py:89] [DEBUG] (0.387) CREATE TABLE `auth_user_user_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`user_id`, `permission_id`)); args=None
+20151109 21:36:06 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_user_permissions'; args=[u'auth_user_user_permissions']
+20151109 21:36:06 [schema.py:102] [DEBUG] ALTER TABLE `auth_permission` ADD CONSTRAINT `auth__content_type_id_508cf46651277a81_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params [])
+20151109 21:36:07 [utils.py:89] [DEBUG] (0.854) ALTER TABLE `auth_permission` ADD CONSTRAINT `auth__content_type_id_508cf46651277a81_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=[]
+20151109 21:36:07 [schema.py:102] [DEBUG] ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permission_group_id_689710a9a73b7457_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params [])
+20151109 21:36:08 [utils.py:89] [DEBUG] (0.832) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permission_group_id_689710a9a73b7457_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=[]
+20151109 21:36:08 [schema.py:102] [DEBUG] ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group__permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params [])
+20151109 21:36:09 [utils.py:89] [DEBUG] (0.844) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group__permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=[]
+20151109 21:36:09 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+20151109 21:36:10 [utils.py:89] [DEBUG] (0.867) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+20151109 21:36:10 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params [])
+20151109 21:36:11 [utils.py:89] [DEBUG] (1.090) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=[]
+20151109 21:36:11 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+20151109 21:36:12 [utils.py:89] [DEBUG] (0.944) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+20151109 21:36:12 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_u_permission_id_384b62483d7071f0_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params [])
+20151109 21:36:13 [utils.py:89] [DEBUG] (1.095) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_u_permission_id_384b62483d7071f0_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=[]
+20151109 21:36:13 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:13 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0001_initial', '2015-11-09 13:36:13.286338'); args=['auth', u'0001_initial', u'2015-11-09 13:36:13.286338']
+20151109 21:36:13 [schema.py:102] [DEBUG] CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL, `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` integer NOT NULL); (params None)
+20151109 21:36:13 [utils.py:89] [DEBUG] (0.445) CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL, `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` integer NOT NULL); args=None
+20151109 21:36:13 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=[u'django_admin_log']
+20151109 21:36:13 [schema.py:102] [DEBUG] ALTER TABLE `django_admin_log` ADD CONSTRAINT `djang_content_type_id_697914295151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params [])
+20151109 21:36:14 [utils.py:89] [DEBUG] (0.965) ALTER TABLE `django_admin_log` ADD CONSTRAINT `djang_content_type_id_697914295151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=[]
+20151109 21:36:14 [schema.py:102] [DEBUG] ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+20151109 21:36:15 [utils.py:89] [DEBUG] (1.055) ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+20151109 21:36:15 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:15 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0001_initial', '2015-11-09 13:36:15.896082'); args=['admin', u'0001_initial', u'2015-11-09 13:36:15.896082']
+20151109 21:36:15 [schema.py:102] [DEBUG] ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; (params [])
+20151109 21:36:16 [utils.py:89] [DEBUG] (0.780) ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; args=[]
+20151109 21:36:16 [schema.py:102] [DEBUG] ALTER TABLE `django_content_type` DROP COLUMN `name` CASCADE; (params [])
+20151109 21:36:17 [utils.py:89] [DEBUG] (0.718) ALTER TABLE `django_content_type` DROP COLUMN `name` CASCADE; args=[]
+20151109 21:36:17 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:17 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0002_remove_content_type_name', '2015-11-09 13:36:17.484434'); args=['contenttypes', u'0002_remove_content_type_name', u'2015-11-09 13:36:17.484434']
+20151109 21:36:17 [schema.py:102] [DEBUG] ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; (params [])
+20151109 21:36:18 [utils.py:89] [DEBUG] (0.934) ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; args=[]
+20151109 21:36:18 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:18 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0002_alter_permission_name_max_length', '2015-11-09 13:36:18.483655'); args=['auth', u'0002_alter_permission_name_max_length', u'2015-11-09 13:36:18.483655']
+20151109 21:36:18 [schema.py:102] [DEBUG] ALTER TABLE `auth_user` MODIFY `email` varchar(254) NOT NULL; (params [])
+20151109 21:36:19 [utils.py:89] [DEBUG] (0.934) ALTER TABLE `auth_user` MODIFY `email` varchar(254) NOT NULL; args=[]
+20151109 21:36:19 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:19 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0003_alter_user_email_max_length', '2015-11-09 13:36:19.483127'); args=['auth', u'0003_alter_user_email_max_length', u'2015-11-09 13:36:19.483127']
+20151109 21:36:19 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 21:36:19 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0004_alter_user_username_opts', '2015-11-09 13:36:19.548727'); args=['auth', u'0004_alter_user_username_opts', u'2015-11-09 13:36:19.548727']
+20151109 21:36:19 [schema.py:102] [DEBUG] ALTER TABLE `auth_user` MODIFY `last_login` datetime(6) NULL; (params [])
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.712) ALTER TABLE `auth_user` MODIFY `last_login` datetime(6) NULL; args=[]
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0005_alter_user_last_login_null', '2015-11-09 13:36:20.327908'); args=['auth', u'0005_alter_user_last_login_null', u'2015-11-09 13:36:20.327908']
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0006_require_contenttypes_0002', '2015-11-09 13:36:20.383181'); args=['auth', u'0006_require_contenttypes_0002', u'2015-11-09 13:36:20.383181']
+20151109 21:36:20 [schema.py:102] [DEBUG] CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); (params None)
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.386) CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); args=None
+20151109 21:36:20 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_session'; args=[u'django_session']
+20151109 21:36:20 [schema.py:102] [DEBUG] CREATE INDEX `django_session_de54fa62` ON `django_session` (`expire_date`); (params [])
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.399) CREATE INDEX `django_session_de54fa62` ON `django_session` (`expire_date`); args=[]
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('sessions', '0001_initial', '2015-11-09 13:36:21.228192'); args=['sessions', u'0001_initial', u'2015-11-09 13:36:21.228192']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('admin', 'logentry'); args=['admin', 'logentry']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add log entry', 1, 'add_logentry'), ('Can change log entry', 1, 'change_logentry'), ('Can delete log entry', 1, 'delete_logentry'); args=(u'Can add log entry', 1, u'add_logentry', u'Can change log entry', 1, u'change_logentry', u'Can delete log entry', 1, u'delete_logentry')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'permission'); args=['auth', 'permission']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'group'); args=['auth', 'group']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'user'); args=['auth', 'user']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add permission', 2, 'add_permission'), ('Can change permission', 2, 'change_permission'), ('Can delete permission', 2, 'delete_permission'), ('Can add group', 3, 'add_group'), ('Can change group', 3, 'change_group'), ('Can delete group', 3, 'delete_group'), ('Can add user', 4, 'add_user'), ('Can change user', 4, 'change_user'), ('Can delete user', 4, 'delete_user'); args=(u'Can add permission', 2, u'add_permission', u'Can change permission', 2, u'change_permission', u'Can delete permission', 2, u'delete_permission', u'Can add group', 3, u'add_group', u'Can change group', 3, u'change_group', u'Can delete group', 3, u'delete_group', u'Can add user', 4, u'add_user', u'Can change user', 4, u'change_user', u'Can delete user', 4, u'delete_user')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('contenttypes', 'contenttype'); args=['contenttypes', 'contenttype']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add content type', 5, 'add_contenttype'), ('Can change content type', 5, 'change_contenttype'), ('Can delete content type', 5, 'delete_contenttype'); args=(u'Can add content type', 5, u'add_contenttype', u'Can change content type', 5, u'change_contenttype', u'Can delete content type', 5, u'delete_contenttype')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('sessions', 'session'); args=['sessions', 'session']
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add session', 6, 'add_session'), ('Can change session', 6, 'change_session'), ('Can delete session', 6, 'delete_session'); args=(u'Can add session', 6, u'add_session', u'Can change session', 6, u'change_session', u'Can delete session', 6, u'delete_session')
+20151109 21:36:21 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 21:36:41 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:41 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:41 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('user_manage', 'userinfo'); args=['user_manage', 'userinfo']
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.053) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add user info', 7, 'add_userinfo'), ('Can change user info', 7, 'change_userinfo'), ('Can delete user info', 7, 'delete_userinfo'); args=(u'Can add user info', 7, u'add_userinfo', u'Can change user info', 7, u'change_userinfo', u'Can delete user info', 7, u'delete_userinfo')
+20151109 21:36:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 21:37:06 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 21:37:14 [schema.py:102] [DEBUG] CREATE TABLE `user_manage_userinfo` (`email` varchar(200) NOT NULL PRIMARY KEY, `name` varchar(32) NOT NULL, `password` varchar(64) NOT NULL, `create_date` datetime(6) NOT NULL, `delegate_ip` varchar(64) NULL, `delegate_port` integer NOT NULL); (params None)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.586) CREATE TABLE `user_manage_userinfo` (`email` varchar(200) NOT NULL PRIMARY KEY, `name` varchar(32) NOT NULL, `password` varchar(64) NOT NULL, `create_date` datetime(6) NOT NULL, `delegate_ip` varchar(64) NULL, `delegate_port` integer NOT NULL); args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'user_manage_userinfo'; args=[u'user_manage_userinfo']
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0001_initial', '2015-11-09 13:37:14.666732'); args=['user_manage', u'0001_initial', u'2015-11-09 13:37:14.666732']
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 21:37:14 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 21:37:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:37:42 [utils.py:89] [DEBUG] (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'michael'; args=(u'michael',)
+20151109 21:37:43 [utils.py:89] [DEBUG] (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'michael'; args=(u'michael',)
+20151109 21:38:01 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_user` (`password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES ('pbkdf2_sha256$20000$Ru7iR4tTxHRW$+E4Quw4WUZ00nWbxXZL13S+y3UTxGxC/6gw75jzVft8=', NULL, 1, 'michael', '', '', '623928167@qq.com', 1, 1, '2015-11-09 13:38:01.003992'); args=[u'pbkdf2_sha256$20000$Ru7iR4tTxHRW$+E4Quw4WUZ00nWbxXZL13S+y3UTxGxC/6gw75jzVft8=', None, True, u'michael', u'', u'', u'623928167@qq.com', True, True, u'2015-11-09 13:38:01.003992']
+20151109 21:38:06 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:38:06 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:38:06 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:38:06 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:38:49 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:38:49 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:38:49 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 21:38:49 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 21:38:51 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:38:51 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:38:51 [utils.py:89] [DEBUG] (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'wdsf152wodajtgzzbqs4gjlk1b74lrmu' AND `django_session`.`expire_date` > '2015-11-09 13:38:51.020414'); args=('wdsf152wodajtgzzbqs4gjlk1b74lrmu', u'2015-11-09 13:38:51.020414')
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'michael'; args=(u'michael',)
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'eq1orccncmiy53823eu1gq63hry2u09o' LIMIT 1; args=(u'eq1orccncmiy53823eu1gq63hry2u09o',)
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('eq1orccncmiy53823eu1gq63hry2u09o', 'NjcwY2M3NTAzOThhZmJkNGVkOGJjODc3NTRjMzU2NWNjNTU4ZjY0YTp7fQ==', '2015-11-23 13:39:09.536267'); args=(u'eq1orccncmiy53823eu1gq63hry2u09o', u'NjcwY2M3NTAzOThhZmJkNGVkOGJjODc3NTRjMzU2NWNjNTU4ZjY0YTp7fQ==', u'2015-11-23 13:39:09.536267')
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'eq1orccncmiy53823eu1gq63hry2u09o'; args=(u'eq1orccncmiy53823eu1gq63hry2u09o',)
+20151109 21:39:09 [utils.py:89] [DEBUG] (0.000) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('eq1orccncmiy53823eu1gq63hry2u09o'); args=(u'eq1orccncmiy53823eu1gq63hry2u09o',)
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.066) UPDATE `auth_user` SET `last_login` = '2015-11-09 13:39:09.997480' WHERE `auth_user`.`id` = 1; args=(u'2015-11-09 13:39:09.997480', 1)
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.000) UPDATE `django_session` SET `session_data` = 'Y2JkZjQ0MWFlZWY5ZGI4OGIxZTRiZDkzMmMzZDgyOTM3OTQ1YWQ5Yjp7Il9hdXRoX3VzZXJfaGFzaCI6ImUyMWNkZTNlNDZiOThmODY5MjA1MTQ3YzRhYjU4NjY1NWRmYjgzN2MiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', `expire_date` = '2015-11-23 13:39:10.130928' WHERE `django_session`.`session_key` = 'eq1orccncmiy53823eu1gq63hry2u09o'; args=(u'Y2JkZjQ0MWFlZWY5ZGI4OGIxZTRiZDkzMmMzZDgyOTM3OTQ1YWQ5Yjp7Il9hdXRoX3VzZXJfaGFzaCI6ImUyMWNkZTNlNDZiOThmODY5MjA1MTQ3YzRhYjU4NjY1NWRmYjgzN2MiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2015-11-23 13:39:10.130928', u'eq1orccncmiy53823eu1gq63hry2u09o')
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('eq1orccncmiy53823eu1gq63hry2u09o', 'Y2JkZjQ0MWFlZWY5ZGI4OGIxZTRiZDkzMmMzZDgyOTM3OTQ1YWQ5Yjp7Il9hdXRoX3VzZXJfaGFzaCI6ImUyMWNkZTNlNDZiOThmODY5MjA1MTQ3YzRhYjU4NjY1NWRmYjgzN2MiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2015-11-23 13:39:10.130928'); args=(u'eq1orccncmiy53823eu1gq63hry2u09o', u'Y2JkZjQ0MWFlZWY5ZGI4OGIxZTRiZDkzMmMzZDgyOTM3OTQ1YWQ5Yjp7Il9hdXRoX3VzZXJfaGFzaCI6ImUyMWNkZTNlNDZiOThmODY5MjA1MTQ3YzRhYjU4NjY1NWRmYjgzN2MiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2015-11-23 13:39:10.130928')
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'eq1orccncmiy53823eu1gq63hry2u09o' AND `django_session`.`expire_date` > '2015-11-09 13:39:10.204844'); args=('eq1orccncmiy53823eu1gq63hry2u09o', u'2015-11-09 13:39:10.204844')
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+20151109 21:39:10 [utils.py:89] [DEBUG] (0.001) SELECT `django_admin_log`.`id`, `django_admin_log`.`action_time`, `django_admin_log`.`user_id`, `django_admin_log`.`content_type_id`, `django_admin_log`.`object_id`, `django_admin_log`.`object_repr`, `django_admin_log`.`action_flag`, `django_admin_log`.`change_message`, `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined`, `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_admin_log` INNER JOIN `auth_user` ON ( `django_admin_log`.`user_id` = `auth_user`.`id` ) LEFT OUTER JOIN `django_content_type` ON ( `django_admin_log`.`content_type_id` = `django_content_type`.`id` ) WHERE `django_admin_log`.`user_id` = 1 ORDER BY `django_admin_log`.`action_time` DESC LIMIT 10; args=(1,)
+20151109 21:39:12 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:12 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:12 [utils.py:89] [DEBUG] (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'eq1orccncmiy53823eu1gq63hry2u09o' AND `django_session`.`expire_date` > '2015-11-09 13:39:12.716010'); args=('eq1orccncmiy53823eu1gq63hry2u09o', u'2015-11-09 13:39:12.716010')
+20151109 21:39:12 [utils.py:89] [DEBUG] (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+20151109 21:39:12 [utils.py:89] [DEBUG] (0.000) SELECT COUNT(*) AS `__count` FROM `user_manage_userinfo`; args=()
+20151109 21:39:12 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` ORDER BY `user_manage_userinfo`.`email` DESC; args=()
+20151109 21:39:13 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:13 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:39:13 [utils.py:89] [DEBUG] (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'eq1orccncmiy53823eu1gq63hry2u09o' AND `django_session`.`expire_date` > '2015-11-09 13:39:13.002597'); args=('eq1orccncmiy53823eu1gq63hry2u09o', u'2015-11-09 13:39:13.002597')
+20151109 21:39:13 [utils.py:89] [DEBUG] (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+20151109 21:41:39 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:41:39 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 21:41:39 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 21:41:39 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:07:10 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:07:10 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:07:10 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:07:10 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:11:47 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:11:47 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:11:47 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:11:47 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:13:06 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:13:06 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:13:06 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:13:06 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:13:59 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:13:59 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:13:59 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:13:59 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:14:42 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:14:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:14:42 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:14:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:19:49 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:19:49 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:19:49 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:19:49 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:20:31 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:20:31 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:20:31 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:20:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:21:15 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:21:15 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:21:15 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:21:15 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:26:19 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:26:19 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:26:19 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:26:19 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:28:40 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:28:40 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:28:40 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:28:40 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:32:12 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:32:12 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:32:12 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:32:12 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:34:26 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:34:26 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:34:26 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:34:26 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:40:02 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:40:02 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:40:02 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:40:02 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:40:44 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:40:44 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:40:44 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:40:44 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:40:54 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:40:54 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:40:54 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:40:54 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:41:07 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:41:07 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:41:07 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:41:07 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:41:33 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:41:33 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:41:33 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:41:33 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:41:35 [views.py:21] [DEBUG] 车宁明, 231564, 623928167@qq.com, 123456789, 123456798
+20151109 22:48:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:48:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:48:42 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:48:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:50:21 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:52:05 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:29 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:29 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:29 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:58:29 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 22:58:37 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ADD COLUMN `qq` varchar(32) DEFAULT %s NOT NULL; (params [u'123456'])
+20151109 22:58:37 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.808) ALTER TABLE `user_manage_userinfo` ADD COLUMN `qq` varchar(32) DEFAULT '123456' NOT NULL; args=[u'123456']
+20151109 22:58:38 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `qq` DROP DEFAULT; (params [])
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.044) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `qq` DROP DEFAULT; args=[]
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0002_userinfo_qq', '2015-11-09 14:58:38.161369'); args=['user_manage', u'0002_userinfo_qq', u'2015-11-09 14:58:38.161369']
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 22:58:38 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 22:58:43 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:43 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:58:43 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 22:58:43 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 22:59:06 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 22:59:06 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 22:59:06 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 22:59:06 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 22:59:06 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 22:59:06 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 23:01:04 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:01:04 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:01:04 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:01:04 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:01:07 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:01:07 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:01:07 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'123456@qq.com',)
+20151109 23:08:17 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:08:17 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:08:17 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:08:17 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:08:23 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:08:23 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:08:23 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'123456@qq.com',)
+20151109 23:13:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:13:42 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:13:42 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:13:42 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:13:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:13:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:13:55 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = ''; args=(u'',)
+20151109 23:13:55 [views.py:29] [DEBUG] <QueryDict: {u'qq': [u''], u'password2': [u''], u'name': [u''], u'register': [u'true'], u'token': [u'430e1d780b96e61fea9545efe9051bbdb1ba4442'], u'csrfmiddlewaretoken': [u'7oTWkDd5TvfLQeqimChhpuscHGG5wXEd'], u'password': [u''], u'email': [u'']}>
+20151109 23:14:15 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:14:15 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:14:16 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:14:16 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:14:20 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:14:20 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:14:20 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = 'qweq'; args=(u'qweq',)
+20151109 23:14:20 [views.py:29] [DEBUG] <QueryDict: {u'qq': [u'qwe'], u'password2': [u'qwe'], u'name': [u'qweq'], u'register': [u'true'], u'token': [u'430e1d780b96e61fea9545efe9051bbdb1ba4442'], u'csrfmiddlewaretoken': [u'7oTWkDd5TvfLQeqimChhpuscHGG5wXEd'], u'password': [u'qwe'], u'email': [u'qweq']}>
+20151109 23:15:59 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:15:59 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:15:59 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:15:59 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:16:01 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:01 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:01 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = 'qweq'; args=(u'qweq',)
+20151109 23:16:35 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:35 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:35 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:16:35 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:16:37 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:37 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:37 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = 'qweq'; args=(u'qweq',)
+20151109 23:16:37 [views.py:35] [DEBUG] qweq,qweq
+20151109 23:16:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:16:55 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:16:55 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:17:02 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:17:02 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:17:02 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = 'qwe'; args=(u'qwe',)
+20151109 23:17:02 [views.py:35] [DEBUG] qwe,qwe
+20151109 23:22:30 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:22:30 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:22:30 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:22:30 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'123456@qq.com',)
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) UPDATE `user_manage_userinfo` SET `name` = '大厦', `qq` = '123456', `password` = '987654321', `create_date` = NULL, `delegate_ip` = NULL, `delegate_port` = 0 WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'\u5927\u53a6', u'123456', u'987654321', 0, u'123456@qq.com')
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) INSERT INTO `user_manage_userinfo` (`email`, `name`, `qq`, `password`, `create_date`, `delegate_ip`, `delegate_port`) VALUES ('123456@qq.com', '大厦', '123456', '987654321', NULL, NULL, 0); args=(u'123456@qq.com', u'\u5927\u53a6', u'123456', u'987654321', None, None, 0)
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 23:22:57 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 23:24:21 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:27 [schema.py:102] [DEBUG] CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); (params None)
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.567) CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'django_migrations'; args=[u'django_migrations']
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:24:27 [schema.py:102] [DEBUG] CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); (params None)
+20151109 23:24:27 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:28 [utils.py:89] [DEBUG] (0.368) CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); args=None
+20151109 23:24:28 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'django_content_type'; args=[u'django_content_type']
+20151109 23:24:28 [schema.py:102] [DEBUG] ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_45f3b1d93ec8c61c_uniq` UNIQUE (`app_label`, `model`); (params [])
+20151109 23:24:28 [utils.py:89] [DEBUG] (0.331) ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_45f3b1d93ec8c61c_uniq` UNIQUE (`app_label`, `model`); args=[]
+20151109 23:24:28 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:28 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0001_initial', '2015-11-09 15:24:28.689679'); args=['contenttypes', u'0001_initial', u'2015-11-09 15:24:28.689679']
+20151109 23:24:28 [schema.py:102] [DEBUG] CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL, UNIQUE (`content_type_id`, `codename`)); (params None)
+20151109 23:24:29 [utils.py:89] [DEBUG] (0.452) CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL, UNIQUE (`content_type_id`, `codename`)); args=None
+20151109 23:24:29 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_permission'; args=[u'auth_permission']
+20151109 23:24:29 [schema.py:102] [DEBUG] CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); (params None)
+20151109 23:24:29 [utils.py:89] [DEBUG] (0.427) CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); args=None
+20151109 23:24:29 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group'; args=[u'auth_group']
+20151109 23:24:29 [schema.py:102] [DEBUG] CREATE TABLE `auth_group_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`group_id`, `permission_id`)); (params None)
+20151109 23:24:30 [utils.py:89] [DEBUG] (0.376) CREATE TABLE `auth_group_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`group_id`, `permission_id`)); args=None
+20151109 23:24:30 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group_permissions'; args=[u'auth_group_permissions']
+20151109 23:24:30 [schema.py:102] [DEBUG] CREATE TABLE `auth_user` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NOT NULL, `is_superuser` bool NOT NULL, `username` varchar(30) NOT NULL UNIQUE, `first_name` varchar(30) NOT NULL, `last_name` varchar(30) NOT NULL, `email` varchar(75) NOT NULL, `is_staff` bool NOT NULL, `is_active` bool NOT NULL, `date_joined` datetime(6) NOT NULL); (params None)
+20151109 23:24:30 [utils.py:89] [DEBUG] (0.390) CREATE TABLE `auth_user` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NOT NULL, `is_superuser` bool NOT NULL, `username` varchar(30) NOT NULL UNIQUE, `first_name` varchar(30) NOT NULL, `last_name` varchar(30) NOT NULL, `email` varchar(75) NOT NULL, `is_staff` bool NOT NULL, `is_active` bool NOT NULL, `date_joined` datetime(6) NOT NULL); args=None
+20151109 23:24:30 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=[u'auth_user']
+20151109 23:24:30 [schema.py:102] [DEBUG] CREATE TABLE `auth_user_groups` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `group_id` integer NOT NULL, UNIQUE (`user_id`, `group_id`)); (params None)
+20151109 23:24:30 [utils.py:89] [DEBUG] (0.387) CREATE TABLE `auth_user_groups` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `group_id` integer NOT NULL, UNIQUE (`user_id`, `group_id`)); args=None
+20151109 23:24:30 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_groups'; args=[u'auth_user_groups']
+20151109 23:24:30 [schema.py:102] [DEBUG] CREATE TABLE `auth_user_user_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`user_id`, `permission_id`)); (params None)
+20151109 23:24:31 [utils.py:89] [DEBUG] (0.421) CREATE TABLE `auth_user_user_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `permission_id` integer NOT NULL, UNIQUE (`user_id`, `permission_id`)); args=None
+20151109 23:24:31 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_user_permissions'; args=[u'auth_user_user_permissions']
+20151109 23:24:31 [schema.py:102] [DEBUG] ALTER TABLE `auth_permission` ADD CONSTRAINT `auth__content_type_id_508cf46651277a81_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params [])
+20151109 23:24:32 [utils.py:89] [DEBUG] (0.798) ALTER TABLE `auth_permission` ADD CONSTRAINT `auth__content_type_id_508cf46651277a81_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=[]
+20151109 23:24:32 [schema.py:102] [DEBUG] ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permission_group_id_689710a9a73b7457_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params [])
+20151109 23:24:32 [utils.py:89] [DEBUG] (0.855) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permission_group_id_689710a9a73b7457_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=[]
+20151109 23:24:32 [schema.py:102] [DEBUG] ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group__permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params [])
+20151109 23:24:33 [utils.py:89] [DEBUG] (0.866) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group__permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=[]
+20151109 23:24:33 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+20151109 23:24:34 [utils.py:89] [DEBUG] (0.777) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+20151109 23:24:34 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params [])
+20151109 23:24:35 [utils.py:89] [DEBUG] (0.943) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=[]
+20151109 23:24:35 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+20151109 23:24:36 [utils.py:89] [DEBUG] (0.789) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+20151109 23:24:36 [schema.py:102] [DEBUG] ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_u_permission_id_384b62483d7071f0_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params [])
+20151109 23:24:37 [utils.py:89] [DEBUG] (0.878) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_u_permission_id_384b62483d7071f0_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=[]
+20151109 23:24:37 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:37 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0001_initial', '2015-11-09 15:24:37.148931'); args=['auth', u'0001_initial', u'2015-11-09 15:24:37.148931']
+20151109 23:24:37 [schema.py:102] [DEBUG] CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL, `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` integer NOT NULL); (params None)
+20151109 23:24:37 [utils.py:89] [DEBUG] (0.378) CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL, `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` integer NOT NULL); args=None
+20151109 23:24:37 [utils.py:89] [DEBUG] (0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=[u'django_admin_log']
+20151109 23:24:37 [schema.py:102] [DEBUG] ALTER TABLE `django_admin_log` ADD CONSTRAINT `djang_content_type_id_697914295151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params [])
+20151109 23:24:38 [utils.py:89] [DEBUG] (0.788) ALTER TABLE `django_admin_log` ADD CONSTRAINT `djang_content_type_id_697914295151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=[]
+20151109 23:24:38 [schema.py:102] [DEBUG] ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+20151109 23:24:39 [utils.py:89] [DEBUG] (0.967) ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+20151109 23:24:39 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:39 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0001_initial', '2015-11-09 15:24:39.383080'); args=['admin', u'0001_initial', u'2015-11-09 15:24:39.383080']
+20151109 23:24:39 [schema.py:102] [DEBUG] ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; (params [])
+20151109 23:24:40 [utils.py:89] [DEBUG] (0.677) ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; args=[]
+20151109 23:24:40 [schema.py:102] [DEBUG] ALTER TABLE `django_content_type` DROP COLUMN `name` CASCADE; (params [])
+20151109 23:24:40 [utils.py:89] [DEBUG] (0.794) ALTER TABLE `django_content_type` DROP COLUMN `name` CASCADE; args=[]
+20151109 23:24:40 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:40 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0002_remove_content_type_name', '2015-11-09 15:24:40.956881'); args=['contenttypes', u'0002_remove_content_type_name', u'2015-11-09 15:24:40.956881']
+20151109 23:24:41 [schema.py:102] [DEBUG] ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; (params [])
+20151109 23:24:42 [utils.py:89] [DEBUG] (0.989) ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; args=[]
+20151109 23:24:42 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:42 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0002_alter_permission_name_max_length', '2015-11-09 15:24:42.022759'); args=['auth', u'0002_alter_permission_name_max_length', u'2015-11-09 15:24:42.022759']
+20151109 23:24:42 [schema.py:102] [DEBUG] ALTER TABLE `auth_user` MODIFY `email` varchar(254) NOT NULL; (params [])
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.989) ALTER TABLE `auth_user` MODIFY `email` varchar(254) NOT NULL; args=[]
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0003_alter_user_email_max_length', '2015-11-09 15:24:43.077721'); args=['auth', u'0003_alter_user_email_max_length', u'2015-11-09 15:24:43.077721']
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0004_alter_user_username_opts', '2015-11-09 15:24:43.143137'); args=['auth', u'0004_alter_user_username_opts', u'2015-11-09 15:24:43.143137']
+20151109 23:24:43 [schema.py:102] [DEBUG] ALTER TABLE `auth_user` MODIFY `last_login` datetime(6) NULL; (params [])
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.756) ALTER TABLE `auth_user` MODIFY `last_login` datetime(6) NULL; args=[]
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:43 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0005_alter_user_last_login_null', '2015-11-09 15:24:43.966378'); args=['auth', u'0005_alter_user_last_login_null', u'2015-11-09 15:24:43.966378']
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0006_require_contenttypes_0002', '2015-11-09 15:24:44.021498'); args=['auth', u'0006_require_contenttypes_0002', u'2015-11-09 15:24:44.021498']
+20151109 23:24:44 [schema.py:102] [DEBUG] CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); (params None)
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.375) CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); args=None
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'django_session'; args=[u'django_session']
+20151109 23:24:44 [schema.py:102] [DEBUG] CREATE INDEX `django_session_de54fa62` ON `django_session` (`expire_date`); (params [])
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.410) CREATE INDEX `django_session_de54fa62` ON `django_session` (`expire_date`); args=[]
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:44 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('sessions', '0001_initial', '2015-11-09 15:24:44.865764'); args=['sessions', u'0001_initial', u'2015-11-09 15:24:44.865764']
+20151109 23:24:44 [schema.py:102] [DEBUG] CREATE TABLE `user_manage_userinfo` (`email` varchar(200) NOT NULL PRIMARY KEY, `name` varchar(32) NOT NULL, `password` varchar(64) NOT NULL, `create_date` datetime(6) NOT NULL, `delegate_ip` varchar(64) NULL, `delegate_port` integer NOT NULL); (params None)
+20151109 23:24:45 [utils.py:89] [DEBUG] (0.374) CREATE TABLE `user_manage_userinfo` (`email` varchar(200) NOT NULL PRIMARY KEY, `name` varchar(32) NOT NULL, `password` varchar(64) NOT NULL, `create_date` datetime(6) NOT NULL, `delegate_ip` varchar(64) NULL, `delegate_port` integer NOT NULL); args=None
+20151109 23:24:45 [utils.py:89] [DEBUG] (0.000) SELECT engine FROM information_schema.tables WHERE table_name = 'user_manage_userinfo'; args=[u'user_manage_userinfo']
+20151109 23:24:45 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:45 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0001_initial', '2015-11-09 15:24:45.299413'); args=['user_manage', u'0001_initial', u'2015-11-09 15:24:45.299413']
+20151109 23:24:45 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ADD COLUMN `qq` varchar(32) DEFAULT %s NOT NULL; (params [u'123456'])
+20151109 23:24:45 [utils.py:89] [DEBUG] (0.641) ALTER TABLE `user_manage_userinfo` ADD COLUMN `qq` varchar(32) DEFAULT '123456' NOT NULL; args=[u'123456']
+20151109 23:24:45 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `qq` DROP DEFAULT; (params [])
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.055) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `qq` DROP DEFAULT; args=[]
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0002_userinfo_qq', '2015-11-09 15:24:46.054368'); args=['user_manage', u'0002_userinfo_qq', u'2015-11-09 15:24:46.054368']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('admin', 'logentry'); args=['admin', 'logentry']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add log entry', 1, 'add_logentry'), ('Can change log entry', 1, 'change_logentry'), ('Can delete log entry', 1, 'delete_logentry'); args=(u'Can add log entry', 1, u'add_logentry', u'Can change log entry', 1, u'change_logentry', u'Can delete log entry', 1, u'delete_logentry')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'permission'); args=['auth', 'permission']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'group'); args=['auth', 'group']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'user'); args=['auth', 'user']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add permission', 2, 'add_permission'), ('Can change permission', 2, 'change_permission'), ('Can delete permission', 2, 'delete_permission'), ('Can add group', 3, 'add_group'), ('Can change group', 3, 'change_group'), ('Can delete group', 3, 'delete_group'), ('Can add user', 4, 'add_user'), ('Can change user', 4, 'change_user'), ('Can delete user', 4, 'delete_user'); args=(u'Can add permission', 2, u'add_permission', u'Can change permission', 2, u'change_permission', u'Can delete permission', 2, u'delete_permission', u'Can add group', 3, u'add_group', u'Can change group', 3, u'change_group', u'Can delete group', 3, u'delete_group', u'Can add user', 4, u'add_user', u'Can change user', 4, u'change_user', u'Can delete user', 4, u'delete_user')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('contenttypes', 'contenttype'); args=['contenttypes', 'contenttype']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add content type', 5, 'add_contenttype'), ('Can change content type', 5, 'change_contenttype'), ('Can delete content type', 5, 'delete_contenttype'); args=(u'Can add content type', 5, u'add_contenttype', u'Can change content type', 5, u'change_contenttype', u'Can delete content type', 5, u'delete_contenttype')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('sessions', 'session'); args=['sessions', 'session']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add session', 6, 'add_session'), ('Can change session', 6, 'change_session'), ('Can delete session', 6, 'delete_session'); args=(u'Can add session', 6, u'add_session', u'Can change session', 6, u'change_session', u'Can delete session', 6, u'delete_session')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('user_manage', 'userinfo'); args=['user_manage', 'userinfo']
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add user info', 7, 'add_userinfo'), ('Can change user info', 7, 'change_userinfo'), ('Can delete user info', 7, 'delete_userinfo'); args=(u'Can add user info', 7, u'add_userinfo', u'Can change user info', 7, u'change_userinfo', u'Can delete user info', 7, u'delete_userinfo')
+20151109 23:24:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 23:24:51 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:51 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:24:51 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:24:51 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'123456@qq.com',)
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) UPDATE `user_manage_userinfo` SET `name` = '大厦', `qq` = '123456', `password` = '987654', `create_date` = NULL, `delegate_ip` = NULL, `delegate_port` = 0 WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'\u5927\u53a6', u'123456', u'987654', 0, u'123456@qq.com')
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) INSERT INTO `user_manage_userinfo` (`email`, `name`, `qq`, `password`, `create_date`, `delegate_ip`, `delegate_port`) VALUES ('123456@qq.com', '大厦', '123456', '987654', NULL, NULL, 0); args=(u'123456@qq.com', u'\u5927\u53a6', u'123456', u'987654', None, None, 0)
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 23:25:04 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` LIMIT 21; args=()
+20151109 23:27:40 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:24 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:28:34 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT %s; (params [u'2015-11-09 15:27:40.536187'])
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.307) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT '2015-11-09 15:27:40.536187'; args=[u'2015-11-09 15:27:40.536187']
+20151109 23:28:34 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; (params [])
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.055) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; args=[]
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0003_auto_20151109_2327', '2015-11-09 15:28:34.427082'); args=['user_manage', u'0003_auto_20151109_2327', u'2015-11-09 15:28:34.427082']
+20151109 23:28:34 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT %s; (params [u'2015-11-09 15:28:34.484925'])
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.052) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT '2015-11-09 15:28:34.484925'; args=[u'2015-11-09 15:28:34.484925']
+20151109 23:28:34 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; (params [])
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.055) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; args=[]
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0004_auto_20151109_2328', '2015-11-09 15:28:34.593821'); args=['user_manage', u'0004_auto_20151109_2328', u'2015-11-09 15:28:34.593821']
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 23:28:34 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 23:28:39 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:39 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:39 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:28:39 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:28:46 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:46 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:28:46 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'123456@qq.com',)
+20151109 23:28:46 [utils.py:89] [DEBUG] (0.000) UPDATE `user_manage_userinfo` SET `name` = '大厦', `qq` = '123456', `password` = '123', `create_date` = '2015-11-09 15:28:46.116355', `delegate_ip` = NULL, `delegate_port` = 0 WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'\u5927\u53a6', u'123456', u'123', u'2015-11-09 15:28:46.116355', 0, u'123456@qq.com')
+20151109 23:28:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `user_manage_userinfo` (`email`, `name`, `qq`, `password`, `create_date`, `delegate_ip`, `delegate_port`) VALUES ('123456@qq.com', '大厦', '123456', '123', '2015-11-09 15:28:46.116355', NULL, 0); args=(u'123456@qq.com', u'\u5927\u53a6', u'123456', u'123', u'2015-11-09 15:28:46.116355', None, 0)
+20151109 23:29:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:29:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:29:55 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:29:55 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:30:00 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:30:00 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:30:00 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '123456@qq.com'; args=(u'123456@qq.com',)
+20151109 23:31:55 [utils.py:89] [DEBUG] (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:31:55 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:31:55 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:31:55 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:32:15 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:32:31 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT %s; (params [u'2015-11-09 15:32:15.305244'])
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.260) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT '2015-11-09 15:32:15.305244'; args=[u'2015-11-09 15:32:15.305244']
+20151109 23:32:31 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; (params [])
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.055) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; args=[]
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0005_auto_20151109_2332', '2015-11-09 15:32:31.793926'); args=['user_manage', u'0005_auto_20151109_2332', u'2015-11-09 15:32:31.793926']
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 23:32:31 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 23:32:46 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:46 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:46 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:32:46 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:32:57 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:57 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:32:57 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '654321@qq.com'; args=(u'654321@qq.com',)
+20151109 23:32:57 [utils.py:89] [DEBUG] (0.000) UPDATE `user_manage_userinfo` SET `name` = '大厦', `qq` = '123456', `password` = '999', `create_date` = '2015-11-09 15:32:46.616552', `delegate_ip` = NULL, `delegate_port` = 0 WHERE `user_manage_userinfo`.`email` = '654321@qq.com'; args=(u'\u5927\u53a6', u'123456', u'999', u'2015-11-09 15:32:46.616552', 0, u'654321@qq.com')
+20151109 23:32:57 [utils.py:89] [DEBUG] (0.000) INSERT INTO `user_manage_userinfo` (`email`, `name`, `qq`, `password`, `create_date`, `delegate_ip`, `delegate_port`) VALUES ('654321@qq.com', '大厦', '123456', '999', '2015-11-09 15:32:46.616552', NULL, 0); args=(u'654321@qq.com', u'\u5927\u53a6', u'123456', u'999', u'2015-11-09 15:32:46.616552', None, 0)
+20151109 23:37:29 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:37:48 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:09 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.001) SHOW FULL TABLES; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET foreign_key_checks=1; args=None
+20151109 23:43:28 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT %s; (params [u'2015-11-09 15:43:09.789752'])
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.253) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` SET DEFAULT '2015-11-09 15:43:09.789752'; args=[u'2015-11-09 15:43:09.789752']
+20151109 23:43:28 [schema.py:102] [DEBUG] ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; (params [])
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.044) ALTER TABLE `user_manage_userinfo` ALTER COLUMN `create_date` DROP DEFAULT; args=[]
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('user_manage', '0006_auto_20151109_2343', '2015-11-09 15:43:28.568306'); args=['user_manage', u'0006_auto_20151109_2343', u'2015-11-09 15:43:28.568306']
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'userinfo' AND `django_content_type`.`app_label` = 'user_manage'); args=('userinfo', 'user_manage')
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON ( `auth_permission`.`content_type_id` = `django_content_type`.`id` ) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,)
+20151109 23:43:28 [utils.py:89] [DEBUG] (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'user_manage'; args=('user_manage',)
+20151109 23:43:35 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:35 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:35 [utils.py:89] [DEBUG] (0.000) SHOW FULL TABLES; args=None
+20151109 23:43:35 [utils.py:89] [DEBUG] (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+20151109 23:43:46 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:46 [utils.py:89] [DEBUG] (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+20151109 23:43:46 [utils.py:89] [DEBUG] (0.000) SELECT `user_manage_userinfo`.`email`, `user_manage_userinfo`.`name`, `user_manage_userinfo`.`qq`, `user_manage_userinfo`.`password`, `user_manage_userinfo`.`create_date`, `user_manage_userinfo`.`delegate_ip`, `user_manage_userinfo`.`delegate_port` FROM `user_manage_userinfo` WHERE `user_manage_userinfo`.`email` = '14321@qq.com'; args=(u'14321@qq.com',)
+20151109 23:43:46 [utils.py:89] [DEBUG] (0.000) UPDATE `user_manage_userinfo` SET `name` = '大厦', `qq` = '123456', `password` = '123', `create_date` = '2015-11-09 15:43:35.467059', `delegate_ip` = NULL, `delegate_port` = 0 WHERE `user_manage_userinfo`.`email` = '14321@qq.com'; args=(u'\u5927\u53a6', u'123456', u'123', u'2015-11-09 15:43:35.467059', 0, u'14321@qq.com')
+20151109 23:43:46 [utils.py:89] [DEBUG] (0.000) INSERT INTO `user_manage_userinfo` (`email`, `name`, `qq`, `password`, `create_date`, `delegate_ip`, `delegate_port`) VALUES ('14321@qq.com', '大厦', '123456', '123', '2015-11-09 15:43:35.467059', NULL, 0); args=(u'14321@qq.com', u'\u5927\u53a6', u'123456', u'123', u'2015-11-09 15:43:35.467059', None, 0)
