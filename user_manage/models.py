@@ -11,6 +11,6 @@ class UserInfo(models.Model):
     name = models.CharField(max_length = 32)
     qq = models.CharField(max_length = 32)
     password = models.CharField(max_length = 64)
-    create_date = models.DateTimeField('date created', default = timezone.localtime(timezone.now()))
+    create_date = models.DateTimeField('date created', default = timezone.now)
     delegate_ip = models.CharField(max_length = 64, null = True)
     delegate_port = models.IntegerField(default = 0)

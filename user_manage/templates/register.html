@@ -38,21 +38,22 @@
                             <div class="form-group">
                                 <label class="control-label" for="lastname">姓名</label>
                                 <div class="controls">
-                                    <input type="text" class="form-control" name="name" id="name" value="">
+                                    <input type="text" class="form-control" name="name" id="name" value="{{ name_value }}">
                                 </div>
                             </div>
 
                             <div style="form-group">
                                 <label class="control-label" for="companyname">QQ(方便我们的客服及时与您沟通...)</label>
                                 <div class="controls">
-                                    <input type="text" class="form-control" name="qq" id="qq" value="" >
+                                    <input type="text" class="form-control" name="qq" id="qq" value="{{ qq_value }}" >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label" for="email">电子邮件地址</label>
                                 <div class="controls">
-                                    <input type="text" class="form-control" name="email" id="email" value="" >
+                                    <font size="3" color="red">{{ email_error }}</font>
+                                    <input type="text" class="form-control" name="email" id="email" value="{{ email_value }}" >
                                 </div>
                             </div>
 
