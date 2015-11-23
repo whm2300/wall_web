@@ -10,10 +10,9 @@ from django.template.context_processors import csrf
 from .models import UserInfo
 
 def register(request):
-    #c = {}
-    #c.update(csrf(request))
-    #return render_to_response('register.html', c)
-    return render_to_response('user_info.html')
+    c = {}
+    c.update(csrf(request))
+    return render_to_response('register.html', c)
 
 def test(request):
     return HttpResponse("asdfasd;lfkjasd;lfj")
@@ -28,11 +27,11 @@ def submit_register(request):
     """
 
     if len(request.POST['email'].strip()) == 0:
-        return redirect('/user')
+        return redirect('/user/register')
 
     try:
         user = get_object_or_404(UserInfo, 
-                                 email = request.POST['email'].strip(' '))
+                email = request.POST['email'].strip(' '))
     except Http404:
         create_user(request.POST)
         return HttpResponse("new user")
@@ -47,5 +46,33 @@ def submit_register(request):
 
 def create_user(user_info):
     user = UserInfo(name = user_info['name'], qq = user_info['qq'], 
-                    email = user_info['email'], password = user_info['password'])
+            email = user_info['email'], password = user_info['password'])
     user.save()
+
+def show_user_info(request):
+    return render_to_response('user_info.html')
+
+def show_login(request):
+    c = {}
+    c.update(csrf(request))
+    return render_to_response('login.html', c)
+
+def sub_login(request):
+    #if email is empty, rediret to register
+    if len(request.POST['email'].strip()) == 0:
+        return redirect('/user/login')
+
+    try:
+        user = get_object_or_404(UserInfo, 
+                email = request.POST['email'].strip(' '), password = request.POST['password'])
+    except Http404:
+        #not exist
+        c = {}
+        c.update(csrf(request))
+        c['email_error'] = '用户名或密码错误，请重新输入...'
+        c['email_value'] = request.POST['email']
+        return render_to_response('login.html', c)
+    else:
+        #login success
+        return HttpResponse("login success")
+

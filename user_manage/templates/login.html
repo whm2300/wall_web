@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>佳代网络加速</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link href="/static/user_manage/css/flathost.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- /navbar -->
+
+<div class="container">
+    <div class="contentpadded">
+
+
+        <div class="page-header">
+            <div class="styled_title"><h1>客户登录</h1></div>
+        </div>
+
+        <form method="post" action="/user/sublogin/" class="form">{% csrf_token %}
+            <div class="logincontainer">
+
+                <fieldset>
+
+                    <div class="form-group">
+                        <font size="3" color="red">{{ email_error }}</font>
+                        <input class="form-control" name="email" id="email" type="text" placeholder="电子邮件地址" value="{{ email_value }}" maxlength="18">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="password" id="password" type="password" placeholder="密码">
+                    </div>
+
+                    <div class="form-group">
+
+                        <p> <input class="btn btn-block btn-success btn-lg" type="submit" value="登录"></p>
+                        <br>
+                        <p> <a href="/user/register/" class="btn btn-block btn-success btn-lg">注册</a></p>
+
+                    </div>
+                </fieldset>
+
+            </div>
+
+        </form>
+
+        <script type="text/javascript">
+$("#email").focus();
+        </script>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+</body></html>
