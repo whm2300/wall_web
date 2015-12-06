@@ -8,4 +8,6 @@ urlpatterns = [
         url(r'^userinfo/', views.show_user_info, name = 'userinfo'),
         url(r'^sublogin/', views.sub_login, name = 'sub_login'),
         url(r'^login/', views.show_login, name = 'show_login'),
+        url(r'^getcount/', views.get_count, name = 'get_count'),
+        url(r'^initial/', views.initial, name = 'initial'),
         ]
