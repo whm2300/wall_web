@@ -105,7 +105,7 @@ def initial(request):
     f = open(path, 'r')
     encryption = f.readline()[10:21]
 
-    count = 10
+    count = 500
     for i in range(count):
         port = f.readline().strip()[5:]
         password = f.readline().strip()[9:]
