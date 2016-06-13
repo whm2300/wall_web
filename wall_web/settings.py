@@ -32,8 +32,8 @@ logging.basicConfig(
 SECRET_KEY = '-pc_4#0klvxcd*cdria6k_e6v8ion5)lwtcnnjweb4khchu1(+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False 
+#DEBUG = True
+DEBUG = False 
 
 ALLOWED_HOSTS = ['*']
 
@@ -91,7 +91,7 @@ DATABASES = {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'wall_web',
             'USER': 'root',
-            'PASSWORD':'password',
+            'PASSWORD':'WHM2300cqm',
             'HOST':'127.0.0.1',
             'PORT':3306,
             }
